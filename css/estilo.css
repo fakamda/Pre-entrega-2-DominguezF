@@ -19,8 +19,9 @@ body {
 h1 {
     color: #fff;
     text-align: center;
+    padding-top: 20px;
     margin-top: 20px;
-    font-size: 40px;
+    font-size: 35px;
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     font-weight: 200;
     text-shadow: 5px 5px 10px #222;
@@ -30,7 +31,7 @@ h1 {
 
 h2 {
     text-align: center;
-    margin-top: 70px;
+    margin-top: 55px;
     padding-bottom: 20px;
     text-shadow: 5px 5px 5px #111;
 }
@@ -120,17 +121,21 @@ h2 {
 }
 
 .form {
-    min-width: 400px;
+    min-width: 380px;
     flex: 1;
     text-align: left;
     padding: 30px;
     order: 2;
 }
 
+.form label {
+    margin: 6px;
+}
+
 .form-input {
     width: 100%;
     padding: 7px;
-    margin: 6px 0;
+    margin: 6px;
     border: none;
     border-bottom: 2px solid darkorchid ;
     background: #333;
@@ -561,9 +566,20 @@ h2 {
     }
 
     .navbar-brand img {
-        margin: auto;
-        width: 50px;
+        width: 45px;
         border-radius: 50%;
+    }
+
+    .navbar-texto {
+        color: #fff;
+        text-decoration: none;
+        text-align: start;
+        font-size: 25px;
+    }
+
+    .navbar-texto:hover {
+        color: #fff;
+
     }
 
     .nav-link {
@@ -579,9 +595,9 @@ h2 {
       color: #c90505;
     }
 
-    .nav-item:hover {
-        background-color: #474949;
-      }
+    .nav-item a {
+        font-size: 16px;
+    }
       
 
        /* CARDS */
@@ -591,6 +607,7 @@ h2 {
         height: 28.5rem;
         width: 18rem;
         margin: 15px;
+        min-width: 18rem;
     }
 
     .cards:hover {
@@ -642,7 +659,8 @@ h2 {
 
     .carrito-container {
         background:  #FCFFEB;
-        width: 380px;
+        width: 360px;
+        min-width: 360px;
         height: 760px;
         border: 1px solid black;
         margin: auto;
@@ -650,8 +668,9 @@ h2 {
     }
     
     .carrito-item {
-        width: 340px;
+        width: 330px;
         height: 120px;
+        box-shadow: 1px 1px 1px 1px #222;
     }
     
     .carrito-item:hover {
@@ -660,8 +679,8 @@ h2 {
     
     .carrito-item-img img {
         width: 120px;
-        height: 110px;
-        margin: 5px;
+        height: 120px;
+        margin: 0px;
     }
     
     .carrito-item-parrafo {
@@ -671,12 +690,6 @@ h2 {
     .carrito-plus {
         color: #c90505;
         font-size: 25px;
-    }
-    
-    .boton-carrito {
-        margin: 5px auto;
-        border: 1px solid #8d0b0b;
-
     }
 
     /* CONTACTO */
