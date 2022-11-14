@@ -604,6 +604,7 @@ h2 {
     }
 
     .cards__img{ 
+        margin: auto;
         height: 18rem;
         width: 18rem;
     }
@@ -658,8 +659,6 @@ h2 {
     }
     
     .carrito-item-img img {
-        display: flex;
-        justify-content: center;
         width: 120px;
         height: 110px;
         margin: 5px;
