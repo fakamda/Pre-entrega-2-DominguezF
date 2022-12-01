@@ -5,20 +5,8 @@
   box-sizing: border-box;
 }
 
-/*EXTEND: agarro el codigo q comparten y lo extiendo funciona mas para propiedades similares*/
-.boton-general, .boton-carrito, .boton {
-  color: #fff;
-  font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
-  text-shadow: 0 1px 0 #111;
-  border-radius: 6px;
-  box-shadow: 0 0 0 0.05rem #111;
-}
-
-/*MIXIN definir estilos que van a ser reutilizados*/
 body {
-  /* background-image: url("../img/fondox3.png"); */
   background-image: linear-gradient(to left top, #212529, #2a2f33, #33383d, #3c4348, #464d53);
-  /* background-image: linear-gradient(to right, #212529, #272c30, #2d3338, #343a40, #3a4148); */
   color: #fff;
   position: relative;
   padding-top: 60px;
@@ -46,6 +34,16 @@ h2 {
   text-shadow: 5px 5px 5px #111;
 }
 
+/*EXTEND: agarro el codigo q comparten y lo extiendo funciona mas para propiedades similares*/
+.boton-general, .boton-carrito, .boton {
+  color: #fff;
+  font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
+  text-shadow: 0 1px 0 #111;
+  border-radius: 6px;
+  box-shadow: 0 0 0 0.05rem #111;
+}
+
+/*MIXIN definir estilos que van a ser reutilizados*/
 /* HEADER */
 .header {
   background: #222;
@@ -53,7 +51,7 @@ h2 {
   width: 100%;
   position: fixed;
   top: 0;
-  z-index: 1;
+  z-index: 500;
 }
 
 .nav {
@@ -121,6 +119,10 @@ h2 {
   width: 100%;
   height: 600px;
   object-fit: cover;
+}
+
+.carousel-control-prev-icon, .carousel-control-next-icon {
+  z-index: 1;
 }
 
 .div-botones {

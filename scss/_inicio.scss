@@ -17,6 +17,10 @@
         object-fit: cover;
     }
 }
+
+.carousel-control-prev-icon, .carousel-control-next-icon {
+    z-index: 1;
+}
    
 
 .div-botones {
@@ -52,15 +56,15 @@
 
 
 .fb1 {
-    color: #3b5998;
+    color:map-get($mapa-colores, fb );
 }
 
 .ig1 {
-    color: #d6249f
+    color:map-get($mapa-colores, ig );
 }
 
 .tw1 {
-    color: #00aace;
+    color:map-get($mapa-colores, tw );
 }
 
 .navbar {

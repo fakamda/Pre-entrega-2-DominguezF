@@ -5,6 +5,45 @@
     box-sizing: border-box;
 }
 
+body {
+    
+    @if $oferta == "20%" {
+        background-image: linear-gradient(to left top, #23476b, #124066, #472f55, #303868, #3d5264);
+    } @else if $oferta == "30%" {
+        background-image: linear-gradient(to left top, #2b1b72, #511077, #39174d, #32143a, #6c2c6e);
+    } @else if $oferta == "40%" {
+        background-image: linear-gradient(to left top, #855085, #7e3ba5, #7c1562, #8b0658, #cc215a);
+    } @else {
+        background-image: linear-gradient(to left top, #212529, #2a2f33, #33383d, #3c4348, #464d53);
+    }
+    color: #fff;
+    position: relative;
+    padding-top: 60px;
+    padding-bottom: 145px;
+    min-height: 100vh;
+}
+
+h1 {
+    color: #fff;
+    text-align: center;
+    padding-top: 20px;
+    margin-top: 20px;
+    font-size: 35px;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-weight: 200;
+    text-shadow: 10px 10px 2px #000;
+    letter-spacing: 3px;
+    font-weight: bold;
+}
+
+h2 {
+    text-align: center;
+    margin-top: 55px;
+    padding-bottom: 20px;
+    text-shadow: 5px 5px 5px #111;
+}
+
+
 /*EXTEND: agarro el codigo q comparten y lo extiendo funciona mas para propiedades similares*/ 
 
 .boton-general {
