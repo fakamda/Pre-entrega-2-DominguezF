@@ -1,0 +1,101 @@
+/* INICIO */
+
+.carousel {
+    @include sizes(100%, 600px);
+}
+   
+.carousel-item {
+    @include sizes(100%, 600px);
+
+    img {
+        @include sizes(100%, 600px);
+        object-fit: cover;
+    }
+    
+    a {
+        @include sizes(100%, 600px);
+        object-fit: cover;
+    }
+}
+   
+
+.div-botones {
+    @include flex-center;
+    height: 100px;
+
+    a {
+        text-align: center;
+    }
+}
+
+.carrusel-h1 {
+    font-size: 80px;
+    text-shadow: 10px 10px 2px #000;
+}
+
+.div-redes-inicio {
+    text-align: center;
+    padding-bottom: 100px;
+
+    i {
+        @include sizes(100px, 30px);
+        font-size: 55px;
+        margin-bottom: 100px;
+    }
+    
+    a {
+        color: #FFF5EB;
+        text-align: center;
+    }
+}
+
+
+
+.fb1 {
+    color: #3b5998;
+}
+
+.ig1 {
+    color: #d6249f
+}
+
+.tw1 {
+    color: #00aace;
+}
+
+.navbar {
+display: none;
+}
+
+.h2-mobile {
+    display: none;
+}
+
+.cd-inicio-container {
+    @include flex-center;
+    flex-direction: row;
+    gap: 35px;
+    margin-bottom: 60px;
+}
+
+.cd-inicio {
+    @include sizes(500px, 400px);
+    background-color: #212529;
+    border-radius: 6px;
+
+    img {
+        @include sizes(500px, 340px);
+        border-radius: 6px;
+        object-fit: cover;
+    }
+    
+}
+
+
+.cd-inicio-h5 {
+    text-align: center;
+    padding-top: 10px;
+}
+   
+   /* RESPONSIVE NABVAR */
+   

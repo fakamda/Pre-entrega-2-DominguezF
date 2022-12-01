@@ -1,0 +1,37 @@
+/* FOOTER */
+
+
+.footer-mio {
+    @include sizes (100%, 140px);
+    @include flex-column;
+    background-color: #222;
+    color: #FFF5EB;
+    position: absolute;
+    bottom: 0;
+
+    i {
+        @include sizes(30px, 30px);
+        font-size: 25px;
+        margin: 15px 7px;
+    }
+    
+    a {
+        color: #FFF5EB;
+        text-align: center;
+        display: inline-block;
+    }
+    p {
+        text-align: center;
+    }
+}
+
+.footer-redes {
+    text-align: center;
+    height: 50px;
+    margin-bottom: 0px;   
+}
+
+
+.footer-copy {
+    @include flex-column;
+}

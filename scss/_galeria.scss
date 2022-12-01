@@ -1,0 +1,38 @@
+
+/*  GALERIA */
+
+.galeria-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    grid-auto-rows: minmax(200px, auto);
+    gap: 20px;
+    padding: 20px;
+    grid-auto-flow: dense;
+  }
+
+.galeria-item {
+    @include flex-center;
+  
+    border-radius: 4px;
+    transition: transform 0.3s ease-in-out;
+  
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+
+    &:hover {
+      transform: scale(1.04);
+    }
+  }
+  
+  
+/* le damos media query para hacer que a partir de los 600px no muestre los cambios de ancho y alto */
+@media (min-width: 600px) {
+    .ancho {
+      grid-column: span 2;
+    }
+  
+    .alto {
+      grid-row: span 2;
+    }
+  }

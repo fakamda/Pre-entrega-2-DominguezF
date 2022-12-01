@@ -1,0 +1,51 @@
+* {
+    font-family: sans-serif;
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+/*EXTEND: agarro el codigo q comparten y lo extiendo funciona mas para propiedades similares*/ 
+
+.boton-general {
+    color: #fff;
+    font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
+    text-shadow: 0 1px 0 #111;
+    border-radius: 6px;
+    box-shadow: 0 0 0 0.05rem #111;
+}
+
+/*MIXIN definir estilos que van a ser reutilizados*/
+
+// MIXIN SIN PARAMETRO
+
+@mixin flex-center {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+@mixin flex-column {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+}
+
+@mixin flex-between {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+//MIXIN CON PARAMETROS 
+
+@mixin sizes ($width, $height) {
+    width: $width;
+    height: $height;
+}
+
+@mixin spacing ($margin, $padding) {
+    margin: $margin;
+    padding: $padding;
+}

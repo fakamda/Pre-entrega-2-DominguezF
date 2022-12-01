@@ -1,0 +1,69 @@
+/* CARRITO */
+
+.carrito-container {
+    @include sizes (800px, 1000px);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    background:  #FCFFEB;
+    border: 2px solid black;
+    margin: auto;
+    margin-top: 20px;
+}
+
+.carrito-item {
+    @include flex-between;
+    @include sizes (600px, 150px);
+    text-align: top;
+    background: #222;
+    margin: 0px auto;
+    border-radius: 4px;
+    transition: transform 0.3s ease-in-out;
+    
+    &:hover {
+        transform: scale(1.04);
+        background: #333;
+        box-shadow: 2px 2px 3px 2px #121212;
+    }
+}
+
+
+
+.carrito-item-img img {
+    @include sizes (120px, 130px);
+    object-fit: cover;
+    margin: 10px;
+    border-radius: 3px;
+}
+
+.carrito-item-parrafo {
+    text-align: center;
+    margin-right: 60px;
+}
+
+.carrito-plus {
+    text-align: center;
+    color: #c90505;
+    font-weight: bold;
+    font-size: 40px;
+}
+
+.boton-carrito {
+    @extend .boton-general;
+    @include sizes (20rem, 2rem);
+    margin: 5px auto;
+    background: #c90505;
+    border: 1px solid #111;
+
+    &:hover {
+        background: linear-gradient(to bottom, red, darkred, red);
+        border: 0.5px solid #000;
+    }
+    
+    &:active {
+        background: linear-gradient(to bottom, rgb(255, 112, 112), rgb(133, 65, 65), rgb(255, 110, 110));
+        border: 0.5px solid #111;
+    }
+}
+
+

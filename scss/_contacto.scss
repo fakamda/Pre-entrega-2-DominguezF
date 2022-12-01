@@ -1,0 +1,79 @@
+/* FORM */
+
+.contacto-h1 {
+    font-size: 40px;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-weight: 200;
+    text-shadow: 2px 2px 5px #222;
+    letter-spacing: 3px;
+}
+
+.form-container {
+    @include flex-center;
+    @include spacing(50px auto, 20px);
+    flex-wrap: wrap;
+    max-width: 1000px;
+    background: #222;
+    box-shadow: 5px 5px 10px #111;
+}
+
+.form {
+    min-width: 370px;
+    flex: 1;
+    text-align: left;
+    padding: 30px;
+    order: 2;
+    
+    label {
+        margin: 6px;
+    }
+
+    textarea {
+        min-height: 140px;
+        resize: none;
+    }
+
+    input[type="submit"] {
+        background: linear-gradient(to bottom, rgb(90, 20, 126), rgb(163, 55, 218));
+    }
+    
+    input[type="submit"]:hover {
+        background: #444;
+    }
+    
+    input[type="submit"]:active {
+        background: darkorchid;
+    }
+    
+}
+
+.form-input {
+    @include spacing(6px, 7px);
+    width: 100%;
+    border: none;
+    border-bottom: 2px solid darkorchid ;
+    background: #333;
+    color: #fff;
+    box-shadow: 2px 2px 5px #111;
+
+    &:focus {
+        background: linear-gradient(to bottom, #333, #444);
+        outline: none;
+        border-bottom: 2px solid rgb(184, 61, 245);
+    }
+}
+
+
+.form-img {
+    flex: 1;
+    padding: 10px;
+    display: flex;
+    min-width: 300px;
+    max-width: 400px;
+    order: 5;
+
+    img {
+        width: 70%;
+        margin: auto;
+    }
+}
