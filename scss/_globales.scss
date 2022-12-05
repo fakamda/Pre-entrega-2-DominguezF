@@ -43,6 +43,27 @@ h2 {
     text-shadow: 5px 5px 5px #111;
 }
 
+a {
+        color: #FFF5EB;
+        text-align: center;
+        text-decoration: none;
+}
+
+
+/*Scrollbar*/
+
+::-webkit-scrollbar {
+    width: .8em;
+}
+
+::-webkit-scrollbar-track {
+    background: #222;
+}
+
+::-webkit-scrollbar-thumb {
+    background: #111;
+}
+
 
 /*EXTEND: agarro el codigo q comparten y lo extiendo funciona mas para propiedades similares*/ 
 

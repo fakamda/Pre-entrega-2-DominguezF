@@ -34,6 +34,25 @@ h2 {
   text-shadow: 5px 5px 5px #111;
 }
 
+a {
+  color: #FFF5EB;
+  text-align: center;
+  text-decoration: none;
+}
+
+/*Scrollbar*/
+::-webkit-scrollbar {
+  width: 0.8em;
+}
+
+::-webkit-scrollbar-track {
+  background: #222;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #111;
+}
+
 /*EXTEND: agarro el codigo q comparten y lo extiendo funciona mas para propiedades similares*/
 .boton-general, .boton-carrito, .boton {
   color: #fff;
@@ -121,11 +140,61 @@ h2 {
   object-fit: cover;
 }
 
+.btn-productos {
+  cursor: pointer;
+  position: relative;
+  padding: 22px 46px;
+  font-size: 28px;
+  text-transform: uppercase;
+  color: #ffffff;
+  background: rgba(255, 255, 255, 0.1);
+  border: 3px solid rgba(255, 255, 255, 0.2);
+  border-radius: 18px;
+  font-family: "Poppins", sans-serif;
+  transition: 0.4s;
+}
+
+.btn-productos:hover {
+  z-index: 1;
+  border-color: transparent;
+  background: linear-gradient(90deg, #f9d923, #00a19d, #0c87b7, #cb49ff, #ff6666, #f9d923);
+  background-size: 400%;
+  box-shadow: 0 0 15px rgb(2, 4, 24);
+  animation: glow 12s linear forwards;
+}
+
+@keyframes glow {
+  from {
+    background-position: 0%;
+  }
+  to {
+    background-position: 400%;
+  }
+}
+.btn-productos::before {
+  content: "";
+  position: absolute;
+  top: -1px;
+  right: -1px;
+  bottom: -1px;
+  left: -1px;
+  background: inherit;
+  filter: blur(36px);
+  opacity: 0;
+  transition: 0.4s ease-out;
+}
+
+.btn-productos:hover::before {
+  opacity: 1;
+  z-index: -1;
+}
+
 .carousel-control-prev-icon, .carousel-control-next-icon {
   z-index: 1;
 }
 
 .div-botones {
+  margin: 30px;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -143,16 +212,6 @@ h2 {
 .div-redes-inicio {
   text-align: center;
   padding-bottom: 100px;
-}
-.div-redes-inicio i {
-  width: 100px;
-  height: 30px;
-  font-size: 55px;
-  margin-bottom: 100px;
-}
-.div-redes-inicio a {
-  color: #FFF5EB;
-  text-align: center;
 }
 
 .fb1 {
@@ -202,7 +261,69 @@ h2 {
   padding-top: 10px;
 }
 
-/* RESPONSIVE NABVAR */
+.iconos {
+  justify-content: center;
+  gap: 30px;
+  display: flex;
+  flex-wrap: wrap;
+  padding: 2% 5%;
+}
+
+.iconos .icono {
+  cursor: pointer;
+  position: relative;
+  width: 70px;
+  height: 70px;
+  transition: 0.3s ease-out;
+}
+.iconos .icono:hover {
+  scale: 1.15;
+}
+
+.iconos .icono .fondo-ico {
+  position: absolute;
+  top: -10px;
+  right: -10px;
+  background: #c4302b;
+  width: 100%;
+  height: 100%;
+  border-radius: 18px;
+  transform: rotate(14deg);
+  transition: 0.3s ease-out;
+}
+
+.iconos .icono:hover .fondo-ico {
+  transform: rotate(24deg);
+}
+
+.iconos .icono:nth-child(1) .fondo-ico {
+  background: #3b5998;
+}
+
+.iconos .icono:nth-child(2) .fondo-ico {
+  background: #d6249f;
+}
+
+.iconos .icono:nth-child(3) .fondo-ico {
+  background: #00aace;
+}
+
+.iconos .icono .glass-ico {
+  width: 100%;
+  height: 100%;
+  display: grid;
+  place-items: center;
+  backdrop-filter: blur(15px);
+  background: rgba(255, 255, 255, 0.2);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: 18px;
+}
+
+.i-icono {
+  font-size: 36px;
+  color: rgba(255, 255, 255, 0.5);
+}
+
 /* CONTENT */
 /* PRODUCTOS */
 /* cards */
@@ -731,9 +852,9 @@ h2 {
   .div-botones a {
     text-align: center;
   }
-  .div-redes-inicio i {
-    font-size: 40px;
-    margin-bottom: 10px;
+  .btn-productos {
+    padding: 12px 30px;
+    font-size: 17px;
   }
   .cd-inicio-container {
     flex-direction: column;
@@ -757,6 +878,28 @@ h2 {
   }
   .carousel-control-prev-icon, .carousel-control-next-icon {
     display: none;
+  }
+  .iconos {
+    gap: 20px;
+  }
+  .iconos .icono {
+    width: 60px;
+    height: 60px;
+    transition: 0.3s ease-out;
+  }
+  .iconos .icono:hover {
+    scale: 1.15;
+  }
+  .iconos .icono .fondo-ico {
+    top: -7px;
+    right: -7px;
+    border-radius: 14px;
+  }
+  .iconos .icono .glass-ico {
+    border-radius: 14px;
+  }
+  .i-icono {
+    font-size: 25px;
   }
 }
 

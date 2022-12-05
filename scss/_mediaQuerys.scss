@@ -272,12 +272,12 @@
             text-align: center;
         }
     }
-   
 
-    .div-redes-inicio i {    
-        font-size: 40px;
-        margin-bottom: 10px;
+    .btn-productos {
+        padding: 12px 30px;
+        font-size: 17px;
     }
+   
 
 
     .cd-inicio-container {
@@ -307,4 +307,33 @@
         display: none;
     }
     
+
+    .iconos {
+        gap: 20px;
+    }
+    
+    .iconos .icono {
+        width: 60px;
+        height: 60px;
+        transition: .3s ease-out;
+    
+        &:hover {
+            scale: 1.15;
+        }
+    }
+    
+    .iconos .icono .fondo-ico {
+        top: -7px;
+        right: -7px;
+        border-radius: 14px;
+
+    }
+    
+    .iconos .icono .glass-ico {
+        border-radius: 14px;
+    }
+    
+    .i-icono {
+        font-size: 25px;
+    }
 }
