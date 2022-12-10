@@ -1,22 +1,102 @@
-@media screen and (max-width: 400px) {
 
-    .nav {
-        display: none;
+
+@media screen and (max-width: 992px) {
+
+    .carousel {
+        @include sizes(100%, 500px);
     }
+
+    .carousel-item {
+        height: 500px;
+
+        img {
+            height: 500px;
+        }
+    }
+
+    .carrusel {
+        z-index: 4;
+    }
+
+    .carrusel-h1 {
+        z-index: 10;
+        display: inline;
+    }
+    
+
+    .div-botones {
+        @include flex-center;
+        height: 50px;
+        margin-bottom: 50px;
+        
+        a {
+            text-align: center;
+        }
+    }
+
+    .btn-productos {
+        padding: 32px 70px;
+        font-size: 18px;
+    }
+   
+
+
+    .cd-inicio-container {
+        flex-direction: column;
+    }
+
+    .cd-inicio {
+        @include sizes(500px, 370px);
+
+        img {
+            @include sizes(500px, 320px);
+            object-fit: cover;
+        }
+    }
+
+    .cd-inicio-h5 {
+        text-align: center;
+        padding-top: 10px;
+    }
+
+    .h2-mobile{
+        display: block;
+        position: relative;  
+    }
+
+}
+
+
+
+@media screen and (max-width: 768px) {
+
+
+   /* NAV */
+
     .navbar {
         display: flex;
+        z-index: 5000;
+
+        img {
+            width: 50px;
+            border-radius: 50%;
+        }
     }
 
-    .navbar-brand img {
-        margin: auto;
-        width: 50px;
-        border-radius: 50%;
+    .navbar-nav {
+        display: flex;
+        justify-content: space-evenly;
+        gap: 20px;
+    
+        margin-left: 0%;
     }
-
+    
+    
     .nav-link {
         color: #FFF5EB;
 
         &:hover {
+            background: none;
             color: #c90505;
           }
     }
@@ -26,54 +106,17 @@
         align-items: center;
     }
     
-    
-}
-
-
-@media screen and (max-width: 768px) {
-
-
-   /* NAV */
-    .nav {
-        display: none;
-    }
-    .navbar {
-        display: flex;
-        z-index: 5000;
-
-        img {
-            width: 45px;
-            border-radius: 50%;
-        }
-    }
-
-    .navbar-texto {
-        color: #fff;
-        text-decoration: none;
-        text-align: start;
-        font-size: 25px;
-
-        &:hover {
-            color: #fff;
-        }
-    }
-
-
-    .nav-link {
-        color: #FFF5EB;
-    }
-
-    #ul-nav-desplegable {
-        justify-content: center;
-        align-items: center;
-    }
-    
-    .nav-link:hover {
-      color: #c90505;
-    }
 
     .nav-item a {
         font-size: 16px;
+    }
+
+    .navbar button {
+        color: #333;
+    }
+    
+    .navbar-toggler-icon {
+        color: #FFF5EB;
     }
       
     /* PRODUCTOS */
@@ -131,7 +174,7 @@
     /* CARRITO */
 
     .carrito-container {
-        @include sizes(360px, 760px);
+        @include sizes(650px, 760px);
         min-width: 360px;
         border: 1px solid black;
         margin: auto;
@@ -139,7 +182,7 @@
     }
     
     .carrito-item {
-        @include sizes(330px, 120px);
+        @include sizes(530px, 120px);
         box-shadow: 1px 1px 1px 1px #222;
 
         &:hover {
@@ -154,7 +197,7 @@
     }
     
     .carrito-item-parrafo {
-        margin-right: 0px;
+        margin: auto;
     }
     
     .carrito-plus {
@@ -173,34 +216,10 @@
         @include spacing(50px 5px, 20px);
     }
 
-    .form-input {
-        margin:5px;
-        border-bottom: 2px solid #8d0b0b ;
-            
-        &:focus {
-        border-bottom: 2px solid #8d0b0b;
-        } 
-    }
-
     .form textarea {
         min-height: 140px;
         resize: none;
     }
-    
-    
-    .form input[type="submit"] {
-        background: linear-gradient(to bottom, rgb(172, 40, 40), rgb(131, 25, 25));
-    }
-    
-    .form input[type="submit"]:hover {
-        background: #a82121;
-    }
-    
-    .form input[type="submit"]:active {
-        background: #8b2b2b;
-    }
-
-
 
     /* FOOTER */
     
@@ -274,8 +293,8 @@
     }
 
     .btn-productos {
-        padding: 12px 30px;
-        font-size: 17px;
+        padding: 22px 50px;
+        font-size: 18px;
     }
    
 
@@ -285,10 +304,10 @@
     }
 
     .cd-inicio {
-        @include sizes(300px, 190px);
+        @include sizes(400px, 270px);
 
         img {
-            @include sizes(300px, 150px);
+            @include sizes(400px, 220px);
             object-fit: cover;
         }
     }
@@ -336,4 +355,104 @@
     .i-icono {
         font-size: 25px;
     }
+}
+
+@media screen and (max-width: 400px) {
+
+    .nav {
+        display: none;
+    }
+    .navbar {
+        display: flex;
+    }
+
+    .navbar-brand img {
+        width: 50px;
+        border-radius: 50%;
+    }
+
+    .nav-link {
+        color: #FFF5EB;
+
+        &:hover {
+            background: none;
+            color: #c90505;
+          }
+    }
+
+    #ul-nav-desplegable {
+        justify-content: center;
+        align-items: center;
+    }
+    
+    .navbar-nav {
+        display: flex;
+        justify-content: space-evenly;
+        gap: 20px;
+    
+        margin-left: 0%;
+    }
+    
+    .navbar-texto {
+        display: flex;
+        margin-right: 50px;
+    }
+    
+    
+    .carrito-container {
+        @include sizes(360px, 760px);
+        min-width: 360px;
+        border: 1px solid black;
+        margin: auto;
+        margin-top: 20px;
+    }
+
+    .carrito-item {
+        @include sizes(330px, 120px);
+        box-shadow: 1px 1px 1px 1px #222;
+
+        &:hover {
+            transform: scale(1.02);
+        }
+    }
+
+
+    .carrito-item-img img {
+        @include sizes(120px, 120px);
+        margin: 0px;
+    }
+
+    .carrito-item-parrafo {
+        margin-right: 0px;
+    }
+
+    .carrito-plus {
+        color: #c90505;
+        font-size: 25px;
+    }
+
+    .cd-inicio-container {
+        flex-direction: column;
+    }
+
+    .cd-inicio {
+        @include sizes(300px, 190px);
+
+        img {
+            @include sizes(300px, 150px);
+            object-fit: cover;
+        }
+    }
+
+    .cd-inicio-h5 {
+        text-align: center;
+        padding-top: 10px;
+    }
+
+    .btn-productos {
+        padding: 12px 30px;
+        font-size: 17px;
+    }
+   
+
 }

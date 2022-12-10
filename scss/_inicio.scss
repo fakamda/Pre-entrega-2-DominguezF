@@ -106,17 +106,6 @@
 .div-redes-inicio {
     text-align: center;
     padding-bottom: 100px;
-
-    // i {
-    //     @include sizes(100px, 30px);
-    //     font-size: 55px;
-    //     margin-bottom: 100px;
-    // }
-    
-    // a {
-    //     color: #FFF5EB;
-    //     text-align: center;
-    // }
 }
 
 
@@ -133,9 +122,6 @@
     color:map-get($mapa-colores, tw );
 }
 
-.navbar {
-display: none;
-}
 
 .h2-mobile {
     display: none;
