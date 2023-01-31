@@ -129,6 +129,7 @@
 
 .cd-inicio-container {
     @include flex-center;
+    flex-wrap: wrap;
     flex-direction: row;
     gap: 35px;
     margin-bottom: 60px;
@@ -214,7 +215,14 @@
     border-radius: 18px;
 }
 
-.i-icono {
+.iconos .icono i {
     font-size: 36px;
-    color: rgba(255, 255, 255, .5);
+    background: linear-gradient(
+        45deg,
+        rgba(255, 255, 255, 1),
+        rgba(255, 255, 255, .3)
+    );
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
 }

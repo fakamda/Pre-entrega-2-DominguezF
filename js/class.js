@@ -31,7 +31,6 @@ let catalogoCompleto = []
 if(localStorage.getItem("catalogoCompleto")){
     catalogoCompleto = JSON.parse(localStorage.getItem("catalogoCompleto"))
 }else{
-    //entra por primera vez
     console.log("Seteando stock de libros")
     catalogoCompleto.push(remera1,remera2,remera3,remera4,remera5,remera6,remera7,remera8,remera9,remera10)
     localStorage.setItem("catalogoCompleto", JSON.stringify(catalogoCompleto))

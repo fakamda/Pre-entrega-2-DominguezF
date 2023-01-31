@@ -14,7 +14,7 @@ body {
   min-height: 100vh;
 }
 
-h1 {
+.h1 {
   color: #fff;
   text-align: center;
   padding-top: 20px;
@@ -100,6 +100,13 @@ a {
   background: #333;
   color: #FFF5EB;
   border-radius: 3px;
+}
+
+.toggle-carrito {
+  height: 39px;
+  width: 90px;
+  margin-left: 12px;
+  color: white;
 }
 
 /* INICIO */
@@ -217,6 +224,7 @@ a {
   display: flex;
   justify-content: center;
   align-items: center;
+  flex-wrap: wrap;
   flex-direction: row;
   gap: 35px;
   margin-bottom: 60px;
@@ -298,9 +306,12 @@ a {
   border-radius: 18px;
 }
 
-.i-icono {
+.iconos .icono i {
   font-size: 36px;
-  color: rgba(255, 255, 255, 0.5);
+  background: linear-gradient(45deg, rgb(255, 255, 255), rgba(255, 255, 255, 0.3));
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
 }
 
 /* CONTENT */
@@ -394,6 +405,45 @@ a {
 .boton:active {
   background: #b32a38;
   border: 0.5px solid #92232e;
+}
+
+.modal-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 400px;
+  height: 130px;
+  text-align: top;
+  background: #333;
+  margin: 20px auto;
+  border: 1px solid black;
+  border-radius: 4px;
+  transition: transform 0.3s ease-in-out;
+}
+.modal-item:hover {
+  transform: scale(1.04);
+  background: #333;
+  box-shadow: 2px 2px 3px 2px #121212;
+}
+
+.modal-item-img img {
+  width: 100px;
+  height: 110px;
+  object-fit: cover;
+  margin: 10px;
+  border-radius: 3px;
+}
+
+.modal-item-parrafo {
+  text-align: center;
+  margin-right: 60px;
+}
+
+.modal-plus {
+  text-align: center;
+  color: #c90505;
+  font-weight: bold;
+  font-size: 40px;
 }
 
 /* FORM */
@@ -896,7 +946,7 @@ a {
     font-size: 25px;
   }
 }
-@media screen and (max-width: 400px) {
+@media screen and (max-width: 460px) {
   .nav {
     display: none;
   }

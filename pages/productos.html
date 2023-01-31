@@ -45,26 +45,52 @@
                     <a class="nav-link" href="./contacto.html">ℭ𝔬𝔫𝔱𝔞𝔠𝔱𝔬</a>
                   </li>
                 </ul>
+                <div>
+                  <form class="d-flex" role="search">
+                    <input id="buscador" class="form-control me-2" type="search" placeholder="Buscar producto" aria-label="search">
+                    <button id="btnBuscar" class="btn btn-outline-secondary" type="submit">Buscar</button>
+                  </form>
+                </div>
+                <div class="toggle-carrito">
+                  <button id="botonCarrito" type="button" class="btn btn-outline-secondary toggle-carrito" data-bs-toggle="modal" data-bs-target="#exampleModal" aria-pressed="false" autocomplete="off">
+                    <i class="fa-solid fa-cart-shopping"></i>
+                  </button>
               </div>
             </div>
           </nav>
-
     </header>
     
     <main>
-        <h1>𝔇𝔢𝔪𝔦𝔰𝔢 𝔒𝔫𝔩𝔦𝔫𝔢 𝔖𝔥𝔬𝔭</h1>
+        <h1 class="h1">𝔇𝔢𝔪𝔦𝔰𝔢 𝔒𝔫𝔩𝔦𝔫𝔢 𝔖𝔥𝔬𝔭</h1>
+        <!-- Modal -->
+        <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+          <div class="modal-dialog">
+            <div class="modal-content bg-dark">
+              <div class="modal-header">
+                <h1 class="modal-title fs-5" id="exampleModalLabel">Carrito</h1>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+              </div>
+              <div class="modal-body" id="carritoContainer">
+                
+              </div>
+              <div class="modal-footer">
+                <button type="button" class="btn btn-secondary mb-2" data-bs-dismiss="modal">Cerrar</button>
+                <button type="button" class="btn btn-danger">Comprar</button>
+              </div>
+            </div>
+          </div>
+        </div>
 
         <section class="product__cards">
         
             <h2>𝔑𝔲𝔢𝔰𝔱𝔯𝔬𝔰 𝔓𝔯𝔬𝔡𝔲𝔠𝔱𝔬𝔰</h2>
             
-            <div class="cards-container" id="ropa">
-              
-            </div>
-            
-            
+            <div class="cards-container" id="ropa"></div>
+            <div id="coincidencia" class="text-center"></div>
         </section>
     </main>
+
+    
     
     <footer class="footer-mio">
         <div class="footer-redes">

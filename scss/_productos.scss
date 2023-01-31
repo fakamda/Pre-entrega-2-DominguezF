@@ -100,5 +100,42 @@
     }
     
 }
+//  CARRITO DE MODAL
+
+.modal-item {
+    @include flex-between;
+    @include sizes (400px, 130px);
+    text-align: top;
+    background: #333;
+    margin: 20px auto;
+    border: 1px solid black;
+    border-radius: 4px;
+    transition: transform 0.3s ease-in-out;
+    
+    &:hover {
+        transform: scale(1.04);
+        background: #333;
+        box-shadow: 2px 2px 3px 2px #121212;
+    }
+}
 
 
+
+.modal-item-img img {
+    @include sizes (100px, 110px);
+    object-fit: cover;
+    margin: 10px;
+    border-radius: 3px;
+}
+
+.modal-item-parrafo {
+    text-align: center;
+    margin-right: 60px;
+}
+
+.modal-plus {
+    text-align: center;
+    color: #c90505;
+    font-weight: bold;
+    font-size: 40px;
+}
