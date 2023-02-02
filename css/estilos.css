@@ -559,11 +559,13 @@ a {
   height: 1000px;
   display: flex;
   flex-direction: column;
+  overflow: auto;
   justify-content: space-evenly;
   background: #FCFFEB;
   border: 2px solid black;
-  margin: auto;
+  margin: 0px auto;
   margin-top: 20px;
+  margin-bottom: 40px;
 }
 
 .carrito-item {
@@ -574,12 +576,12 @@ a {
   height: 150px;
   text-align: top;
   background: #222;
-  margin: 0px auto;
+  margin: 8px auto;
   border-radius: 4px;
   transition: transform 0.3s ease-in-out;
 }
 .carrito-item:hover {
-  transform: scale(1.04);
+  transform: scale(1.02);
   background: #333;
   box-shadow: 2px 2px 3px 2px #121212;
 }
@@ -594,7 +596,7 @@ a {
 
 .carrito-item-parrafo {
   text-align: center;
-  margin-right: 60px;
+  margin: auto;
 }
 
 .carrito-plus {
@@ -606,18 +608,27 @@ a {
 
 .boton-carrito {
   width: 20rem;
-  height: 2rem;
-  margin: 5px auto;
-  background: #c90505;
+  height: 4rem;
+  font-size: 18px;
+  font-weight: bold;
+  margin: 5px auto 30px;
   border: 1px solid #111;
 }
 .boton-carrito:hover {
-  background: linear-gradient(to bottom, red, darkred, red);
-  border: 0.5px solid #000;
+  background: #dc3545;
+  border: 0.5px solid #bd313f;
 }
 .boton-carrito:active {
-  background: linear-gradient(to bottom, rgb(255, 112, 112), rgb(133, 65, 65), rgb(255, 110, 110));
-  border: 0.5px solid #111;
+  background: #b32a38;
+  border: 0.5px solid #92232e;
+}
+
+.metodo-pago-icon {
+  height: 30px;
+}
+
+.metodo-pago-tarjeta {
+  height: 40px;
 }
 
 /* FOOTER */

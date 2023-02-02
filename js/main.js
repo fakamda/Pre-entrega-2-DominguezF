@@ -4,6 +4,7 @@ let buscador = document.getElementById("buscador")
 let coincidencia = document.getElementById("coincidencia")
 let carritoContainer = document.getElementById("carritoContainer")
 let botonCarrito = document.getElementById("botonCarrito")
+let btnCarritoComprar = document.getElementById("btnCarritoComprar")
 
 
 function mostrarCatalogo(array){
@@ -12,15 +13,15 @@ function mostrarCatalogo(array){
         let nuevaRopa = document.createElement("div")
         // nuevaRopa.classList.add("cards")
         nuevaRopa.innerHTML = `
-<div id="${remeras.id}" class="cards">
-    <div class="cards__img-container">
-        <img src="../img/${remeras.imagen}" alt="${remeras.modelo}" class="cards__img"/>
-    </div>
-    <p class="cards__parrafo--titulo">${remeras.modelo}</p>
-    <p class="cards__parrafo">${remeras.color}</p>
-    <p class="cards__parrafo--precio">$${remeras.precio}</p>
-    <button id="agregarBtn${remeras.id}" class="boton"> <a href="#">Agregar al carrito</a> <i class="fa-solid fa-cart-shopping"></i></button> 
-</div> 
+        <div id="${remeras.id}" class="cards">
+            <div class="cards__img-container">
+                <img src="../img/${remeras.imagen}" alt="${remeras.modelo}" class="cards__img"/>
+            </div>
+            <p class="cards__parrafo--titulo">${remeras.modelo}</p>
+            <p class="cards__parrafo">${remeras.color}</p>
+            <p class="cards__parrafo--precio">$${remeras.precio}</p>
+            <button id="agregarBtn${remeras.id}" class="boton"> <a href="#">Agregar al carrito</a> <i class="fa-solid fa-cart-shopping"></i></button> 
+        </div> 
         `
     ropa.appendChild(nuevaRopa)
 
@@ -31,7 +32,7 @@ function mostrarCatalogo(array){
     }
 }
 mostrarCatalogo(catalogoCompleto)
-// --------------------------------------------------------------------------------------
+
 
 // FUNCION PARA BUSCAR
 
@@ -61,7 +62,6 @@ function cargarCarrito(array){
     carritoContainer.innerHTML = ""
     for(let remeras of array){
         let nuevoItem = document.createElement("div")
-        //  nuevoItem.classList.add("carrito-item")
          nuevoItem.innerHTML = `
             <div class="modal-item">
                 <div class="modal-item-img">
@@ -80,6 +80,7 @@ function cargarCarrito(array){
 
 
 
+
 let productosCarrito
 if(localStorage.getItem("carrito")){
     productosCarrito =  JSON.parse(localStorage.getItem("carrito"))
@@ -87,8 +88,6 @@ if(localStorage.getItem("carrito")){
    productosCarrito = []
 }
 
-
-//EVENTOS 
 
 buscador.addEventListener("input", ()=>{
     console.log(buscador.value)
@@ -98,4 +97,8 @@ buscador.addEventListener("input", ()=>{
 
 botonCarrito.addEventListener("click", ()=>{
     cargarCarrito(productosCarrito)
+})
+
+btnCarritoComprar.addEventListener("click",()=>{
+    window.location.href = "carrito.html"
 })
