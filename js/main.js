@@ -11,7 +11,6 @@ function mostrarCatalogo(array){
     ropa.innerHTML = ""
     for(let remeras of array){
         let nuevaRopa = document.createElement("div")
-        // nuevaRopa.classList.add("cards")
         nuevaRopa.innerHTML = `
         <div id="${remeras.id}" class="cards">
             <div class="cards__img-container">
@@ -35,7 +34,6 @@ mostrarCatalogo(catalogoCompleto)
 
 
 // FUNCION PARA BUSCAR
-
 function buscarInfo(busqueda, array){
     let busquedaArr = array.filter(
         (ropa)=> ropa.modelo.toLowerCase().includes(busqueda.toLowerCase()) || ropa.color.toLowerCase().includes(busqueda.toLowerCase())
@@ -51,11 +49,9 @@ function buscarInfo(busqueda, array){
 
 //FUNCION PARA AGREGAR AL CARRITO
 function agregarCarrito(remeras){
-    console.log(`El producto ${remeras.modelo} de color ${remeras.color} ha sido agregado. Vale $${remeras.precio}`)
     productosCarrito.push(remeras)
-    console.log(productosCarrito)
     localStorage.setItem("carrito", JSON.stringify(productosCarrito))
-    cargarCarrito(productosCarrito) //con esto le damos para que imprima en dom
+    cargarCarrito(productosCarrito)
 }
 
 function cargarCarrito(array){
@@ -72,15 +68,22 @@ function cargarCarrito(array){
                     <P class="cards__parrafo">${remeras.color}</P>
                     <p class="cards__parrafo">$${remeras.precio}</p>
                 </div>
+                <div>
+                <button id="btnBorrar${remeras.id}" type="button" class=" btn-danger borrar-carrito"><i class="fa-solid fa-xmark"></i></i></button>
+                </div>
             </div>
          `
          carritoContainer.appendChild(nuevoItem)
+        
+         let btnBorrar = document.getElementById(`btnBorrar${remeras.id}`)
+         btnBorrar.addEventListener("click", ()=>{
+            borrarCarrito(remeras)
+        })
     }
 }
 
 
-
-
+// array de los productos del carrito
 let productosCarrito
 if(localStorage.getItem("carrito")){
     productosCarrito =  JSON.parse(localStorage.getItem("carrito"))
@@ -88,6 +91,23 @@ if(localStorage.getItem("carrito")){
    productosCarrito = []
 }
 
+
+function borrarCarrito(arrayId){
+    let remeraId 
+    // if(localStorage.getItem("carrito")){
+        remeraId = JSON.parse(localStorage.getItem("carrito"))
+    // }else{
+    //     remeraId = []
+    // }
+    let remeras = remeraId.find(i => i.id === arrayId.id)
+    let index = remeraId.indexOf(remeras)
+    remeraId.splice(index, 1)
+    localStorage.setItem("carrito", JSON.stringify(remeraId))
+    cargarCarrito(remeraId)
+}
+
+
+// EVENTOS
 
 buscador.addEventListener("input", ()=>{
     console.log(buscador.value)

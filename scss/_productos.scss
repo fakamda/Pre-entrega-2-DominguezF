@@ -104,11 +104,11 @@
 
 .modal-item {
     @include flex-between;
-    @include sizes (400px, 130px);
+    @include sizes (430px, 130px);
     text-align: top;
     background: #333;
     margin: 20px auto;
-    border: 1px solid black;
+    border: 0.5px solid #111;
     border-radius: 4px;
     transition: transform 0.3s ease-in-out;
     
@@ -130,12 +130,21 @@
 
 .modal-item-parrafo {
     text-align: center;
-    margin-right: 60px;
+    word-wrap: normal;
 }
 
-.modal-plus {
-    text-align: center;
-    color: #c90505;
-    font-weight: bold;
-    font-size: 40px;
+
+.borrar-carrito{
+    color: white;
+    background-color: inherit;
+    border-radius: 4px;
+    width: 30px;
+    margin-bottom: 100px;
+    margin-right: 0px;
+    font-size: 18px;
+    border: inherit;
+
+    &:hover{
+        background-color: #666;
+    }
 }
