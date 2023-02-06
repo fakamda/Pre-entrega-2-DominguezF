@@ -422,7 +422,7 @@ a {
 }
 .modal-item:hover {
   transform: scale(1.04);
-  background: #333;
+  background: #444;
   box-shadow: 2px 2px 3px 2px #121212;
 }
 
@@ -446,11 +446,15 @@ a {
   width: 30px;
   margin-bottom: 100px;
   margin-right: 0px;
-  font-size: 18px;
+  font-size: 20px;
   border: inherit;
 }
 .borrar-carrito:hover {
-  background-color: #666;
+  color: #b42e3c;
+}
+
+.precio-total {
+  font-size: 18px;
 }
 
 /* FORM */
@@ -567,7 +571,7 @@ a {
   display: flex;
   flex-direction: column;
   overflow: auto;
-  justify-content: space-evenly;
+  justify-content: flex-start;
   background: #FCFFEB;
   border: 2px solid black;
   margin: 0px auto;
@@ -582,14 +586,14 @@ a {
   width: 600px;
   height: 150px;
   text-align: top;
-  background: #222;
+  background: #333;
   margin: 8px auto;
   border-radius: 4px;
   transition: transform 0.3s ease-in-out;
 }
 .carrito-item:hover {
   transform: scale(1.02);
-  background: #333;
+  background: #444;
   box-shadow: 2px 2px 3px 2px #121212;
 }
 
@@ -636,6 +640,14 @@ a {
 
 .metodo-pago-tarjeta {
   height: 40px;
+}
+
+.h2-carrito {
+  color: #222;
+  text-shadow: none;
+  font-size: 30px;
+  font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
+  text-align: center;
 }
 
 /* FOOTER */

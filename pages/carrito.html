@@ -54,8 +54,15 @@
         <h1 class="h1">ℭ𝔞𝔯𝔯𝔦𝔱𝔬 𝔡𝔢 ℭ𝔬𝔪𝔭𝔯𝔞𝔰</h1>
 
         <section>
-          <div id="carritoContainer" class="carrito-container"></div>
+          <div id="carritoContainer" class="carrito-container">
+          </div>
+          <div class="text-center precio-total">
+            <p id="carritoPrecio"></p>
+          </div>
           <div class="d-flex justify-content-center">
+            
+
+      
             <!-- Button trigger modal -->
             <button class="btn btn-danger boton-carrito" data-bs-toggle="modal" data-bs-target="#staticBackdrop">Finalizar Compra</button>
           </div>
@@ -80,9 +87,54 @@
                         </h2>
                         <div id="collapseOne" class="accordion-collapse collapse show" aria-labelledby="headingOne" data-bs-parent="#accordionExample">
                           <div class="accordion-body">
-                            <strong>This is the first item's accordion body.</strong>
-                          </div>
+                            <strong>Pagar con debito</strong>
+
+                            <!-- form tarjeta -->
+                              <!-- credit card info-->
+                              <div id="nav-tab-card" class="tab-pane fade show active">
+                                <p class="alert alert-success">Placeholder de alert</p>
+                                <form role="form">
+                                  <div class="form-group">
+                                    <label for="username">Nombre que figura en Tarjeta</label>
+                                    <input type="text" name="username" placeholder="ej: Roberto Carlos" required class="form-control">
+                                  </div>
+                                  <div class="form-group">
+                                    <label for="cardNumber">Numero de Tarjeta</label>
+                                    <div class="input-group">
+                                      <input type="text" name="cardNumber" placeholder="ej: 1234 5678 9123 000" class="form-control" required>
+                                      <div class="input-group-append">
+                                        <span class="input-group-text text-muted">
+                                          <i class="fa fa-cc-visa mx-1 pb-2"></i>
+                                          <i class="fa fa-cc-amex mx-1 pb-2"></i>
+                                          <i class="fa fa-cc-mastercard mx-1 pb-2"></i>
+                                      </span>
+                                      </div>
+                                    </div>
+                                  </div>
+                                  <div class="row">
+                                    <div class="col-sm-8">
+                                      <div class="form-group">
+                                        <label><span class="hidden-xs">Fecha de expiracion</span></label>
+                                        <div class="input-group">
+                                          <input type="number" placeholder="MM" name="" class="form-control" required maxlength="2">
+                                          <input type="number" placeholder="YY" name="" class="form-control" required maxlength="2">
+                                        </div>
+                                      </div>
+                                    </div>
+                                    <div class="col-sm-4">
+                                      <div class="form-group mb-4">
+                                        <label data-toggle="tooltip" title="Three-digits code on the back of your card">CVV
+                                          <i class="fa fa-question-circle"></i>
+                                        </label>
+                                        <input type="text" required class="form-control" maxlength="3">
+                                      </div>
+                                    </div>
+                                  </div>
+                                  <button type="button" class="subscribe btn btn-success btn-block rounded-pill shadow-sm"> Confirmar </button>
+                                </form>
+                              </div>
                         </div>
+                        <!-- FINAL DE FORM TARJETA -->
                       </div>
                       <div class="accordion-item">
                         <h2 class="accordion-header" id="headingTwo">
@@ -92,7 +144,9 @@
                         </h2>
                         <div id="collapseTwo" class="accordion-collapse collapse" aria-labelledby="headingTwo" data-bs-parent="#accordionExample">
                           <div class="accordion-body">
-                            <strong>This is the second item's accordion body.</strong> 
+                            <strong>Placeholder para form de credito :)</strong> 
+                            
+            
                           </div>
                         </div>
                       </div>
@@ -104,7 +158,7 @@
                         </h2>
                         <div id="collapseThree" class="accordion-collapse collapse" aria-labelledby="headingThree" data-bs-parent="#accordionExample">
                           <div class="accordion-body">
-                            <strong>This is the third item's accordion body.</strong> 
+                            <strong>Placeholder para form de MP :)</strong> 
                           </div>
                         </div>
                       </div>

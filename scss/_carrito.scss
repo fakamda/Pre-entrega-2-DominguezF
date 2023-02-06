@@ -5,7 +5,7 @@
     display: flex;
     flex-direction: column;
     overflow:auto;
-    justify-content: space-evenly;
+    justify-content: flex-start;
     background:  #FCFFEB;
     border: 2px solid black;
     margin: 0px auto;
@@ -17,14 +17,14 @@
     @include flex-between;
     @include sizes (600px, 150px);
     text-align: top;
-    background: #222;
+    background: #333;
     margin: 8px auto;
     border-radius: 4px;
     transition: transform 0.3s ease-in-out;
     
     &:hover {
         transform: scale(1.02);
-        background: #333;
+        background: #444;
         box-shadow: 2px 2px 3px 2px #121212;
     }
 }
@@ -78,4 +78,10 @@
     height: 40px;
 }
 
-
+.h2-carrito {
+    color:#222;
+    text-shadow:none;
+    font-size:30px;
+    font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    text-align:center;
+}

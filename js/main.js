@@ -5,6 +5,10 @@ let coincidencia = document.getElementById("coincidencia")
 let carritoContainer = document.getElementById("carritoContainer")
 let botonCarrito = document.getElementById("botonCarrito")
 let btnCarritoComprar = document.getElementById("btnCarritoComprar")
+let precioTotal = document.getElementById("precioTotal")
+
+
+
 
 
 function mostrarCatalogo(array){
@@ -54,12 +58,35 @@ function agregarCarrito(remeras){
     cargarCarrito(productosCarrito)
 }
 
+
+function borrarCarrito(array){
+    array.forEach(productosCarrito => {
+        let btnBorrar = document.getElementById(`btnBorrar${productosCarrito.id}`)
+        btnBorrar.addEventListener("click", ()=>{
+            let cardProducto = document.getElementById(`productoCarrito${productosCarrito.id}`)
+            cardProducto.remove()
+            let remeraEliminar = array.find((elem) => elem.id == productosCarrito.id)
+            let index = array.indexOf(remeraEliminar)
+            array.splice(index, 1)
+            localStorage.setItem("carrito", JSON.stringify(array))
+            calcularPrecio(array)
+       })
+    })
+}
+
+function calcularPrecio(arr){
+    let total = arr.reduce((acc, productosCarrito)=> acc + productosCarrito.precio, 0)
+    JSON.parse(total) == 0 ? precioTotal.innerHTML = "<h6>No hay productos en el carrito.<h6>" : precioTotal.innerHTML = `El total de la compra es <strong>$${total}</strong>`
+}
+
+
+
 function cargarCarrito(array){
     carritoContainer.innerHTML = ""
     for(let remeras of array){
         let nuevoItem = document.createElement("div")
          nuevoItem.innerHTML = `
-            <div class="modal-item">
+            <div class="modal-item" id="productoCarrito${remeras.id}">
                 <div class="modal-item-img">
                     <img src="../img/${remeras.imagen}" alt="${remeras.modelo}">
                 </div>
@@ -74,36 +101,18 @@ function cargarCarrito(array){
             </div>
          `
          carritoContainer.appendChild(nuevoItem)
-        
-         let btnBorrar = document.getElementById(`btnBorrar${remeras.id}`)
-         btnBorrar.addEventListener("click", ()=>{
-            borrarCarrito(remeras)
-        })
     }
+
+    borrarCarrito(array)
+    calcularPrecio(array)
 }
 
 
-// array de los productos del carrito
 let productosCarrito
 if(localStorage.getItem("carrito")){
     productosCarrito =  JSON.parse(localStorage.getItem("carrito"))
 }else{
    productosCarrito = []
-}
-
-
-function borrarCarrito(arrayId){
-    let remeraId 
-    // if(localStorage.getItem("carrito")){
-        remeraId = JSON.parse(localStorage.getItem("carrito"))
-    // }else{
-    //     remeraId = []
-    // }
-    let remeras = remeraId.find(i => i.id === arrayId.id)
-    let index = remeraId.indexOf(remeras)
-    remeraId.splice(index, 1)
-    localStorage.setItem("carrito", JSON.stringify(remeraId))
-    cargarCarrito(remeraId)
 }
 
 
