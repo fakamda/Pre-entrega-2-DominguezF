@@ -3,7 +3,7 @@ let precioTotal = document.getElementById("carritoPrecio")
 
 function calcularPrecio(arr){
     let total = arr.reduce((acc, productosCarrito)=> acc + productosCarrito.precio, 0)
-    JSON.parse(total) == 0 ? precioTotal.innerHTML = "" : precioTotal.innerHTML = `El total de la compra es <strong>$${total}</strong>`
+    total == 0 ? precioTotal.innerHTML = "" : precioTotal.innerHTML = `El total de la compra es <strong>$${total}</strong>`
 }
 
 

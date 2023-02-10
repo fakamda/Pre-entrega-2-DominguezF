@@ -1,0 +1,155 @@
+[
+    {
+        "id":1,
+        "modelo":"Remera Custom El camino",
+        "precio":3800,
+        "color":"Negro, Talles hasta XXL",
+        "imagen":"remera1.webp"
+    },
+    {
+        "id":2,
+        "modelo":"Remera Skate Steve Caballero",
+        "precio":4000,
+        "color":"Negro, Talles hasta XXL",
+        "imagen":"remera2.webp"
+    },
+    {
+        "id":3,
+        "modelo":"Remera Vans Off The Wall",
+        "precio":3700,
+        "color":"Varios Colores, Talles hasta XL",
+        "imagen":"remera3.webp"
+    },
+    {
+        "id":4,
+        "modelo":"Remera Skate Jooks",
+        "precio":3500,
+        "color":"Blanco, Talles hasta XL",
+        "imagen":"remera4.webp"
+    },
+    {
+        "id":5,
+        "modelo":"Remera Tony Hawk",
+        "precio":3400,
+        "color":"Varios Colores, Talles hasta XL",
+        "imagen":"remera5.webp"
+    },
+    {
+        "id":6,
+        "modelo":"Remera Skate n' Destroy",
+        "precio":3000,
+        "color":"Negro, Talles hasta XXL",
+        "imagen":"remera6.webp"
+    },
+    {
+        "id":7,
+        "modelo":"Remera Skate Board",
+        "precio":3800,
+        "color":"Negro, Talles hasta XXL",
+        "imagen":"remera7.webp"
+    },
+    {
+        "id":8,
+        "modelo":"Remera Thrasher Gojira Rosa",
+        "precio":4800,
+        "color":"Negro, Talles hasta XXL",
+        "imagen":"remera8.webp"
+    },
+    {
+        "id":9,
+        "modelo":"Remera Thrasher Gojira Original",
+        "precio":4800,
+        "color":"Negro, Talles hasta XXL",
+        "imagen":"remera9.webp"
+    },
+    {
+        "id":10,
+        "modelo":"Remera Thrasher Racoon",
+        "precio":4000,
+        "color":"Varios Colores, Talles hasta XXL",
+        "imagen":"remera10.webp"
+    },
+    {
+        "id":11,
+        "modelo":"Remera Thrasher Magic",
+        "precio":3900,
+        "color":"Negro, Talles hasta XL",
+        "imagen":"remera11.webp"
+    },
+    {
+        "id":12,
+        "modelo":"Remera Element Classic",
+        "precio":4000,
+        "color":"Varios Colores, Talles hasta XL",
+        "imagen":"remera12.webp"
+    },
+    {
+        "id":13,
+        "modelo":"Buzo Hechicero",
+        "precio":8000,
+        "color":"Negro, Talles hasta XXL",
+        "imagen":"buzo1.webp"
+    },
+    {
+        "id":14,
+        "modelo":"Hoodie Skate n' Destroy",
+        "precio":7500,
+        "color":"Varios Colores, Talles hasta XXL",
+        "imagen":"buzo2.webp"
+    },
+    {
+        "id":15,
+        "modelo":"Hoodie Creature",
+        "precio":7800,
+        "color":"Negro, Talles hasta XL",
+        "imagen":"buzo3.webp"
+    },
+    {
+        "id":16,
+        "modelo":"Buzo Thrasher Gojira Rojo",
+        "precio":8800,
+        "color":"Negro, Blanco, Talles hasta XXL",
+        "imagen":"buzo4.webp"
+    },
+    {
+        "id":17,
+        "modelo":"Hoodie Santa Cruz Logo",
+        "precio":9000,
+        "color":"Blanco, Talles hasta XL",
+        "imagen":"buzo5.webp"
+    },
+    {
+        "id":18,
+        "modelo":"Hoodie Sketchy Tank",
+        "precio":10000,
+        "color":"Negro, Talles hasta XL",
+        "imagen":"buzo6.webp"
+    },
+    {
+        "id":19,
+        "modelo":"Hoodie Fire Spit",
+        "precio":9800,
+        "color":"Blanco, Talles hasta XL",
+        "imagen":"buzo7.webp"
+    },
+    {
+        "id":20,
+        "modelo":"Hoodie Santa Cruz Clasico",
+        "precio":9900,
+        "color":"Negro, Talles hasta XL",
+        "imagen":"buzo8.webp"
+    }
+
+]
+
+
+
+
+
+
+
+
+
+
+
+

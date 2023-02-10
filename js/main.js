@@ -76,7 +76,7 @@ function borrarCarrito(array){
 
 function calcularPrecio(arr){
     let total = arr.reduce((acc, productosCarrito)=> acc + productosCarrito.precio, 0)
-    JSON.parse(total) == 0 ? precioTotal.innerHTML = "<h6>No hay productos en el carrito.<h6>" : precioTotal.innerHTML = `El total de la compra es <strong>$${total}</strong>`
+    total == 0 ? precioTotal.innerHTML = "<h6>No hay productos en el carrito.<h6>" : precioTotal.innerHTML = `El total de la compra es <strong>$${total}</strong>`
 }
 
 
