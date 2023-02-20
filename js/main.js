@@ -6,9 +6,7 @@ let carritoContainer = document.getElementById("carritoContainer")
 let botonCarrito = document.getElementById("botonCarrito")
 let btnCarritoComprar = document.getElementById("btnCarritoComprar")
 let precioTotal = document.getElementById("precioTotal")
-
-
-
+let modalBody = document.getElementById("modalBody")
 
 
 function mostrarCatalogo(array){
@@ -18,7 +16,7 @@ function mostrarCatalogo(array){
         nuevaRopa.innerHTML = `
         <div id="${remeras.id}" class="cards">
             <div class="cards__img-container">
-                <img src="../img/${remeras.imagen}" alt="${remeras.modelo}" class="cards__img"/>
+                <img src="../img/${remeras.imagen}" alt="${remeras.modelo}" class="cards__img" id="imagen${remeras.id}" data-bs-toggle="modal" data-bs-target="#exampleModal2" aria-pressed="false" autocomplete="off"/>
             </div>
             <p class="cards__parrafo--titulo">${remeras.modelo}</p>
             <p class="cards__parrafo">${remeras.color}</p>
@@ -32,6 +30,40 @@ function mostrarCatalogo(array){
     btnAgregar.addEventListener("click", ()=>{
        agregarCarrito(remeras)
     })
+
+    // BOTON PARA ABRIR MODAL DESPLEGANDO LA IMG
+    let abrirModal = document.getElementById(`imagen${remeras.id}`)
+    abrirModal.addEventListener("click", ()=>{
+
+      modalBody.innerHTML = ""
+        let nuevoModal = document.createElement("div")
+        nuevoModal.innerHTML = `
+        <div id="carruselContainer">
+        <div id="carouselExampleControls" class="carousel carousel-dark slide carrusel-card" data-bs-ride="carousel">
+          <div class="carousel-inner marco-carrusel">
+            <div class="carousel-item active">
+              <img src="../img/Saved Pictures/${remeras.modal1}" class="d-block w-150" alt="..." id="imagen${remeras.id}">
+            </div>
+            <div class="carousel-item">
+              <img src="../img/Saved Pictures/${remeras.modal2}" class="d-block w-150" alt="..." id="imagen${remeras.id}">
+            </div>
+          </div>
+          <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="prev">
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Previous</span>
+          </button>
+          <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="next">
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Next</span>
+          </button>
+        </div>
+      </div>
+        `
+        modalBody.appendChild(nuevoModal)
+
+    })
+
+
     }
 }
 mostrarCatalogo(catalogoCompleto)
@@ -53,9 +85,48 @@ function buscarInfo(busqueda, array){
 
 //FUNCION PARA AGREGAR AL CARRITO
 function agregarCarrito(remeras){
-    productosCarrito.push(remeras)
-    localStorage.setItem("carrito", JSON.stringify(productosCarrito))
-    cargarCarrito(productosCarrito)
+
+    let newProduct = productosCarrito.find((element)=> element.id == remeras.id)
+
+    if(newProduct == undefined){
+        productosCarrito.push(remeras)
+        localStorage.setItem("carrito", JSON.stringify(productosCarrito))
+        cargarCarrito(productosCarrito)
+        
+        Toastify({
+            text: ` ${remeras.modelo} 
+            Ha sido agregado al carrito`,
+            duration: 3000,
+            destination: "https://github.com/apvarun/toastify-js",
+            newWindow: true,
+            close: true,
+            gravity: "bottom", 
+            position: "right", 
+            stopOnFocus: true, 
+            style: {
+              background: "linear-gradient(90deg, rgba(89,96,152,1) 11%, rgba(63,32,71,1) 100%)",
+            },
+            onClick: function(){} 
+          }).showToast();
+
+
+    }else{
+        Toastify({
+            text: ` ${remeras.modelo} 
+            Ya existe en el carrito`,
+            duration: 3000,
+            destination: "https://github.com/apvarun/toastify-js",
+            newWindow: true,
+            close: true,
+            gravity: "bottom", 
+            position: "right", 
+            stopOnFocus: true, 
+            style: {
+              background: "linear-gradient(90deg, rgba(89,96,152,1) 11%, rgba(63,32,71,1) 100%)",
+            },
+            onClick: function(){} 
+          }).showToast();
+    }
 }
 
 
@@ -71,15 +142,41 @@ function borrarCarrito(array){
             localStorage.setItem("carrito", JSON.stringify(array))
             calcularPrecio(array)
        })
+
+       document.getElementById(`btnPlus${productosCarrito.id}`).addEventListener("click", ()=>{
+        productosCarrito.plusOne()
+        localStorage.setItem("carrito", JSON.stringify(array))
+        cargarCarrito(array)
+       })
+
+       document.getElementById(`btnMinus${productosCarrito.id}`).addEventListener("click", ()=>{
+        let borrar = productosCarrito.minusOne()
+        localStorage.setItem("carrito", JSON.stringify(array))
+
+        if(borrar < 1){
+            let cardProducto = document.getElementById(`productoCarrito${productosCarrito.id}`)
+            cardProducto.remove()
+            let remeraEliminar = array.find((elem) => elem.id == productosCarrito.id)
+            let index = array.indexOf(remeraEliminar)
+            array.splice(index, 1)
+            localStorage.setItem("carrito", JSON.stringify(array))
+            calcularPrecio(array)
+        }else{
+            localStorage.setItem("carrito", JSON.stringify(array))
+        }
+
+        cargarCarrito(array)
+       })
+
     })
 }
 
 function calcularPrecio(arr){
-    let total = arr.reduce((acc, productosCarrito)=> acc + productosCarrito.precio, 0)
+    let total = arr.reduce((acc, productosCarrito)=> acc + (productosCarrito.precio * productosCarrito.cantidad), 0)
     total == 0 ? precioTotal.innerHTML = "<h6>No hay productos en el carrito.<h6>" : precioTotal.innerHTML = `El total de la compra es <strong>$${total}</strong>`
+    
+    return total
 }
-
-
 
 function cargarCarrito(array){
     carritoContainer.innerHTML = ""
@@ -93,10 +190,15 @@ function cargarCarrito(array){
                 <div class="modal-item-parrafo">
                     <p class="cards__parrafo--titulo">${remeras.modelo}</p>
                     <P class="cards__parrafo">${remeras.color}</P>
-                    <p class="cards__parrafo">$${remeras.precio}</p>
+                    <p class="cards__parrafo">Sub-Total: $${remeras.precio * remeras.cantidad}</p>
+                    <div class="counter">
+                    <i id="btnMinus${remeras.id}" class="fa-solid fa-minus"></i>
+                        <span class="quantity">${remeras.cantidad}</span>
+                    <i id="btnPlus${remeras.id}" class="fa-solid fa-plus"></i>
+                    </div>
                 </div>
                 <div>
-                <button id="btnBorrar${remeras.id}" type="button" class=" btn-danger borrar-carrito"><i class="fa-solid fa-xmark"></i></i></button>
+                <button id="btnBorrar${remeras.id}" type="button" class="btn-danger borrar-carrito"><i class="fa-solid fa-xmark"></i></i></button>
                 </div>
             </div>
          `
@@ -108,12 +210,21 @@ function cargarCarrito(array){
 }
 
 
-let productosCarrito
+
+let productosCarrito = []
+
 if(localStorage.getItem("carrito")){
-    productosCarrito =  JSON.parse(localStorage.getItem("carrito"))
+    for(let producto of JSON.parse(localStorage.getItem("carrito"))){
+        let cantidadStorage = producto.cantidad
+        let newCarrito = new remera(producto.id, producto.modelo, producto.precio, producto.color, producto.imagen)
+        newCarrito.cantidad = cantidadStorage
+        productosCarrito.push(newCarrito)
+    }
+    
 }else{
    productosCarrito = []
 }
+
 
 
 // EVENTOS
@@ -131,3 +242,4 @@ botonCarrito.addEventListener("click", ()=>{
 btnCarritoComprar.addEventListener("click",()=>{
     window.location.href = "carrito.html"
 })
+

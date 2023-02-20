@@ -7,11 +7,12 @@
     <meta name="keywords" content="ropa, ropa skate, skate, accesorios, ropa punk, punk, demise, buzos, remeras">
     <meta name="description" content="Todos nuestros productos de manera rapida y sencilla, con envio a todo el pais, todos los talles y distintos colores">
     <link rel="shorcut icon" href="../img/demise.ico" />
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/toastify-js/src/toastify.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
      <!-- CSS only -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
     <link rel="stylesheet" href="../css/estilos.css" />
-    <script src="https://kit.fontawesome.com/facd7cf848.js"crossorigin="anonymous"></script>
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/toastify-js/src/toastify.min.css">
 
     <title>Demise Shop | Productos</title>
 </head>
@@ -68,7 +69,7 @@
             <div class="modal-content bg-dark">
               <div class="modal-header">
                 <h1 class="modal-title fs-5" id="exampleModalLabel">Carrito</h1>
-                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
               </div>
               <div class="modal-body" id="carritoContainer">
                 <div>
@@ -92,12 +93,26 @@
             <div class="cards-container" id="ropa"></div>
             <div id="coincidencia" class="text-center"></div>
         </section>
-
-                    <!-- Button trigger modal -->
-        
+           
+          <div id="modal">
+          <div class="modal fade modal-lg" id="exampleModal2" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+            <div class="modal-dialog">
+              <div class="modal-content bg-dark">
+                <div class="modal-header">
+                  <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="" id="modalBody">
+                  <img src="" alt="">
+                </div>
+              </div>
+            </div>
+          </div>
+          </div>
+          </div>
+        </div> 
+  
     </main>
 
-    
     
     <footer class="footer-mio">
         <div class="footer-redes">
@@ -112,9 +127,11 @@
           <a href="#">Politicas de Privacidad</a>
       </div>
     </footer>
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/toastify-js"></script>
+    <script src="https://kit.fontawesome.com/facd7cf848.js"crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-OERcA2EqjJCMA+/3y+gxIOqMEjwtxJY7qPCqsdltbNJuaOe923+mo//f6V8Qbsw3" crossorigin="anonymous"></script>
+    
     <script src="../js/class.js"></script>
     <script src="../js/main.js"></script>
-    <script src="../js/functionsSP.js"></script>
 </body>
 </html>

@@ -358,6 +358,7 @@ a {
 .cards__img {
   width: 20rem;
   height: 20rem;
+  cursor: pointer;
   object-fit: cover;
 }
 
@@ -412,7 +413,7 @@ a {
   justify-content: space-between;
   align-items: center;
   width: 430px;
-  height: 130px;
+  height: 140px;
   text-align: top;
   background: #333;
   margin: 20px auto;
@@ -421,16 +422,16 @@ a {
   transition: transform 0.3s ease-in-out;
 }
 .modal-item:hover {
-  transform: scale(1.04);
+  transform: scale(1.01);
   background: #444;
   box-shadow: 2px 2px 3px 2px #121212;
 }
 
 .modal-item-img img {
   width: 100px;
-  height: 110px;
+  height: 125px;
   object-fit: cover;
-  margin: 10px;
+  margin: 7px;
   border-radius: 3px;
 }
 
@@ -455,6 +456,52 @@ a {
 
 .precio-total {
   font-size: 18px;
+}
+
+.counter {
+  position: relative;
+  right: -120px;
+}
+
+.counter i {
+  cursor: pointer;
+  width: 24px;
+  height: 37px;
+  line-height: 30px;
+  text-align: center;
+  font-size: 12px;
+  font-weight: 700;
+  color: #fff;
+  background: #53495f;
+  border-radius: 8px 8px 0 0;
+}
+.counter i:hover {
+  background: #6f6280;
+}
+.counter i:active {
+  background: #413a4b;
+}
+
+.counter span {
+  margin: 6px;
+  font: 700 16px "Poppins";
+  color: rgba(255, 255, 255, 0.9176470588);
+}
+
+.carrusel-card {
+  height: 800px;
+  max-width: 800px;
+}
+
+.marco-carrusel {
+  height: 800px;
+  max-width: 800px;
+}
+.marco-carrusel img {
+  justify-content: center;
+  object-fit: contain;
+  height: 800px;
+  max-width: 800px;
 }
 
 /* FORM */

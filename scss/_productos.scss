@@ -44,6 +44,7 @@
 
 .cards__img{ 
     @include sizes(20rem, 20rem);
+    cursor: pointer;
     object-fit: cover;
 }
 
@@ -104,7 +105,7 @@
 
 .modal-item {
     @include flex-between;
-    @include sizes (430px, 130px);
+    @include sizes (430px, 140px);
     text-align: top;
     background: #333;
     margin: 20px auto;
@@ -113,7 +114,7 @@
     transition: transform 0.3s ease-in-out;
     
     &:hover {
-        transform: scale(1.04);
+        transform: scale(1.01);
         background: #444;
         box-shadow: 2px 2px 3px 2px #121212;
     }
@@ -122,9 +123,9 @@
 
 
 .modal-item-img img {
-    @include sizes (100px, 110px);
+    @include sizes (100px, 125px);
     object-fit: cover;
-    margin: 10px;
+    margin: 7px;
     border-radius: 3px;
 }
 
@@ -154,3 +155,57 @@
 .precio-total{
     font-size: 18px;
 }
+
+
+.counter {
+    position: relative;
+    right: -120px;
+}
+
+
+
+.counter i {
+    cursor: pointer;
+    width: 24px;
+    height: 37px;
+    line-height: 30px;
+    text-align: center;
+    font-size: 12px;
+    font-weight: 700;
+    color: #fff;
+    background:#53495f;
+    border-radius: 8px 8px 0 0;
+
+    &:hover{
+        background:#6f6280;
+    }
+    
+    &:active{
+        background:#413a4b;
+    }
+}
+
+
+.counter span {
+    margin: 6px;
+    font: 700 16px 'Poppins';
+    color: #ffffffea;
+}
+
+.carrusel-card{
+    height: 800px;
+    max-width: 800px;
+}
+
+.marco-carrusel{
+    height: 800px;
+    max-width: 800px;
+
+    img{
+        justify-content: center;
+        object-fit: contain;
+        height: 800px;
+        max-width: 800px;
+    }
+}
+
