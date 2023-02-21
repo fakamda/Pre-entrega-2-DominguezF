@@ -34,12 +34,10 @@ const cargarProductos = async () => {
 
 
 if(localStorage.getItem("catalogoCompleto")){
-    // catalogoCompleto = JSON.parse(localStorage.getItem("catalogoCompleto"))
     for(let producto of JSON.parse(localStorage.getItem("catalogoCompleto"))){
         let nuevoProducto = new remera(producto.id, producto.modelo, producto.precio, producto.color, producto.imagen, producto.modal1, producto.modal2)
         catalogoCompleto.push(nuevoProducto)
     }
-    // console.log(catalogoCompleto)
 }else{
     cargarProductos()
     localStorage.setItem("catalogoCompleto", JSON.stringify(catalogoCompleto))

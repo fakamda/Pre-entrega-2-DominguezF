@@ -42,10 +42,10 @@ function mostrarCatalogo(array){
         <div id="carouselExampleControls" class="carousel carousel-dark slide carrusel-card" data-bs-ride="carousel">
           <div class="carousel-inner marco-carrusel">
             <div class="carousel-item active">
-              <img src="../img/Saved Pictures/${remeras.modal1}" class="d-block w-150" alt="..." id="imagen${remeras.id}">
+              <img src="../img/Saved Pictures/${remeras.modal1}" class="d-block w-150" alt="..." id="modal${remeras.id}">
             </div>
             <div class="carousel-item">
-              <img src="../img/Saved Pictures/${remeras.modal2}" class="d-block w-150" alt="..." id="imagen${remeras.id}">
+              <img src="../img/Saved Pictures/${remeras.modal2}" class="d-block w-150" alt="..." id="modal${remeras.id}">
             </div>
           </div>
           <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="prev">
