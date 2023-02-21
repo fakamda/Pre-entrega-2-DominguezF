@@ -5,9 +5,9 @@ class remera {
         this.precio = precio
         this.color = color
         this.imagen = imagen
-        this.cantidad = 1
         this.modal1 = modal1
         this.modal2 = modal2
+        this.cantidad = 1
     }
     plusOne(){
         this.cantidad = this.cantidad + 1

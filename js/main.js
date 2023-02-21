@@ -36,8 +36,8 @@ function mostrarCatalogo(array){
     abrirModal.addEventListener("click", ()=>{
 
       modalBody.innerHTML = ""
-        let nuevoModal = document.createElement("div")
 
+        let nuevoModal = document.createElement("div")
         nuevoModal.innerHTML = `
         <div id="carruselContainer">
         <div id="carouselExampleControls" class="carousel carousel-dark slide carrusel-card" data-bs-ride="carousel">
@@ -225,6 +225,7 @@ if(localStorage.getItem("carrito")){
 }else{
    productosCarrito = []
 }
+
 
 
 
