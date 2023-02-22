@@ -7,6 +7,10 @@ let botonCarrito = document.getElementById("botonCarrito")
 let btnCarritoComprar = document.getElementById("btnCarritoComprar")
 let precioTotal = document.getElementById("precioTotal")
 let modalBody = document.getElementById("modalBody")
+let btnProductos = document.getElementById("btnProductos")
+let loader = document.getElementById("loader")
+let loaderTxt = document.getElementById("loaderTxt")
+
 
 
 function mostrarCatalogo(array){
@@ -64,10 +68,15 @@ function mostrarCatalogo(array){
 
     })
 
-
     }
+
 }
-mostrarCatalogo(catalogoCompleto)
+
+setTimeout(()=>{
+    loader.remove()
+    loaderTxt.remove()
+    mostrarCatalogo(catalogoCompleto)
+}, 500)
 
 
 // FUNCION PARA BUSCAR
@@ -123,7 +132,7 @@ function agregarCarrito(remeras){
             position: "right", 
             stopOnFocus: true, 
             style: {
-              background: "linear-gradient(90deg, rgba(89,96,152,1) 11%, rgba(63,32,71,1) 100%)",
+              background: "linear-gradient(90deg, rgba(50,20,152,1) 11%, rgba(63,32,71,1) 100%)",
             },
             onClick: function(){} 
           }).showToast();
@@ -142,6 +151,23 @@ function borrarCarrito(array){
             array.splice(index, 1)
             localStorage.setItem("carrito", JSON.stringify(array))
             calcularPrecio(array)
+
+            Toastify({
+                text: ` ${remeraEliminar.modelo} 
+                Se ha eliminado del carrito`,
+                duration: 3000,
+                destination: "https://github.com/apvarun/toastify-js",
+                newWindow: true,
+                close: true,
+                gravity: "bottom", 
+                position: "right", 
+                stopOnFocus: true, 
+                style: {
+                  background: "linear-gradient(90deg, rgba(213,114,15,1) 0%, rgba(149,0,28,1) 45%)",
+                },
+                onClick: function(){} 
+              }).showToast();
+
        })
 
        document.getElementById(`btnPlus${productosCarrito.id}`).addEventListener("click", ()=>{
@@ -245,3 +271,6 @@ btnCarritoComprar.addEventListener("click",()=>{
     window.location.href = "carrito.html"
 })
 
+btnProductos.addEventListener("click", ()=>{
+    window.location.reload(true)
+})
