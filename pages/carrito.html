@@ -56,7 +56,12 @@
         <h1 class="h1">ℭ𝔞𝔯𝔯𝔦𝔱𝔬 𝔡𝔢 ℭ𝔬𝔪𝔭𝔯𝔞𝔰</h1>
 
         <section>
+          
+
           <div id="carritoContainer" class="carrito-container">
+
+            
+
           </div>
           <div class="text-center precio-total">
             <p id="carritoPrecio"></p>
@@ -64,6 +69,7 @@
           <div class="d-flex justify-content-center">
             
 
+            
       
             <!-- Button trigger modal -->
             <button class="btn btn-danger boton-carrito" data-bs-toggle="modal" data-bs-target="#staticBackdrop">Finalizar Compra</button>
@@ -94,16 +100,16 @@
                             <!-- form tarjeta -->
                               <!-- credit card info-->
                               <div id="nav-tab-card" class="tab-pane fade show active">
-                                <p class="alert alert-success">Simulacion de Pago, llenar con txt y num</p>
+                                <p class="alert alert-success" id="alertTd">Simulacion de Pago, llenar con txt y num</p>
                                 <form role="form">
                                   <div class="form-group">
                                     <label for="username">Nombre que figura en Tarjeta</label>
-                                    <input type="text" name="username" placeholder="ej: Roberto Carlos" required class="form-control">
+                                    <input type="text" name="username" placeholder="ej: Roberto Carlos" required class="form-control" id="nombreTd">
                                   </div>
                                   <div class="form-group">
                                     <label for="cardNumber">Numero de Tarjeta</label>
                                     <div class="input-group">
-                                      <input type="text" name="cardNumber" placeholder="ej: 1234 5678 9123 000" class="form-control" required>
+                                      <input type="text" name="cardNumber" placeholder="ej: 1234 5678 9123 000" class="form-control" required id="numeroTd">
                                       <div class="input-group-append">
                                         <span class="input-group-text text-muted">
                                           <i class="fa fa-cc-visa mx-1 pb-2"></i>
@@ -128,13 +134,13 @@
                                         <label data-toggle="tooltip" title="Three-digits code on the back of your card">CVV
                                           <i class="fa fa-question-circle"></i>
                                         </label>
-                                        <input type="text" required class="form-control" maxlength="3">
+                                        <input type="text" required class="form-control" maxlength="3" id="cvvTd">
                                       </div>
                                     </div>
                                   </div>
                                   <!-- MOSTRAR PRECIO TOTAL -->
                                   <div class="text-center texto-debito" id="precioDebito">
-                                      2300
+                                    
                                   </div>
                                   <button type="button" id="btnConfirmarTd" class="d-flex justify-content-center subscribe btn btn-success btn-block rounded-pill shadow-sm"> Confirmar </button>
                                 </form>
@@ -190,9 +196,9 @@
                                           
                                           <!-- MOSTRAR EN CUOTAS -->
                                           <ul class="dropdown-menu">
-                                            <li><a class="dropdown-item" href="#">3 Cuotas</a></li>
-                                            <li><a class="dropdown-item" href="#">6 cuotas</a></li>
-                                            <li><a class="dropdown-item" href="#">12 cuotas</a></li>
+                                            <li><a class="dropdown-item" id="tresCuotas" href="#">3 Cuotas</a></li>
+                                            <li><a class="dropdown-item" id="seisCuotas" href="#">6 cuotas</a></li>
+                                            <li><a class="dropdown-item" id="doceCuotas" href="#">12 cuotas</a></li>
                                           </ul>
                                         </div>
                                       <!-- CUOTAS -->
@@ -236,6 +242,8 @@
                         </div>
                       </div>
                   </div>
+
+                  
                   
 
 

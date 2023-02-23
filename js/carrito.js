@@ -6,13 +6,28 @@ let precioMp = document.getElementById("precioMp")
 let btnConfirmarTd = document.getElementById("btnConfirmarTd")
 let btnConfirmarTc = document.getElementById("btnConfirmarTc")
 let btnConfirmarMp = document.getElementById("btnConfirmarMp")
+let tresCuotas = document.getElementById("tresCuotas")
+let seisCuotas = document.getElementById("seisCuotas")
+let doceCuotas = document.getElementById("doceCuotas")
 
 
 
 function calcularPrecio(arr){
     let total = arr.reduce((acc, productosCarrito)=> acc + (productosCarrito.precio * productosCarrito.cantidad), 0)
     total == 0 ? precioTotal.innerHTML = "" : precioTotal.innerHTML = `El total de la compra es <strong>$${total}</strong>`
+
     precioCredito == 0 ? precioCredito.innerHTML = "" : precioCredito.innerHTML = `$${total}`
+    
+    tresCuotas.addEventListener("click",()=>{
+      precioCredito == 0 ? precioCredito.innerHTML = "" : precioCredito.innerHTML = `3 cuotas de $${(total/3).toFixed(2)}`
+    })
+    seisCuotas.addEventListener("click",()=>{
+      precioCredito == 0 ? precioCredito.innerHTML = "" : precioCredito.innerHTML = `6 cuotas de $${(total/6).toFixed(2)}`
+    })
+    doceCuotas.addEventListener("click",()=>{
+      precioCredito == 0 ? precioCredito.innerHTML = "" : precioCredito.innerHTML = `12 cuotas de $${(total/12).toFixed(2)}`
+    })
+      
     precioDebito == 0 ? precioDebito.innerHTML = "" : precioDebito.innerHTML = `$${total}`
     precioMp == 0 ? precioMp.innerHTML = "" : precioMp.innerHTML = `$${total}`
     
@@ -60,7 +75,7 @@ function Carrito(array){
         let nuevoItem = document.createElement("div")
          nuevoItem.innerHTML = `
             <div class="carrito-item" id="productosCarrito${remeras.id}">
-                <span class="position-absolute top-0 start--100 translate-middle badge rounded-pill bg-danger">
+                <span class="position-absolute top-0 start--100 translate-middle badge bg-dark">
                     ${remeras.cantidad}
                 </span>
                 <div class="carrito-item-img">
@@ -83,7 +98,6 @@ function Carrito(array){
 }
 
 
-
 let productosCarrito
 if(localStorage.getItem("carrito")){
     productosCarrito =  JSON.parse(localStorage.getItem("carrito"))
@@ -98,9 +112,10 @@ if(productosCarrito == 0){
 }
 
 
-// eventos
+// FORMULARIO DE TARJETA DE CREDITO Y MP
 
 btnConfirmarTd.addEventListener("click", ()=>{
+  
 
     const swalWithBootstrapButtons = Swal.mixin({
         customClass: {
@@ -121,9 +136,7 @@ btnConfirmarTd.addEventListener("click", ()=>{
       }).then((result) => {
         if (result.isConfirmed) {
           swalWithBootstrapButtons.fire(
-            'Deleted!',
-            'Your file has been deleted.',
-            'success'
+            'Su compra ha sido finalizada con Exito.'
           )
 
           productosCarrito = []
@@ -137,9 +150,8 @@ btnConfirmarTd.addEventListener("click", ()=>{
           result.dismiss === Swal.DismissReason.cancel
         ) {
           swalWithBootstrapButtons.fire(
-            'Cancelled',
-            'Your imaginary file is safe :)',
-            'error'
+            'Cancelado',
+            'Se ha cancelado el pago'
           )
         }
       })
@@ -165,9 +177,9 @@ btnConfirmarTc.addEventListener("click", ()=>{
       }).then((result) => {
         if (result.isConfirmed) {
           swalWithBootstrapButtons.fire(
-            'Su compra ha sido finalizada con Exito.',
+            'Su compra ha sido finalizada con Exito.'
           )
-          
+
           productosCarrito = []
           localStorage.removeItem("carrito")
           setTimeout(()=>{
@@ -179,7 +191,7 @@ btnConfirmarTc.addEventListener("click", ()=>{
         ) {
           swalWithBootstrapButtons.fire(
             'Cancelado',
-            'Se ha cancelado el pago',
+            'Se ha cancelado el pago'
           )
         }
       })
@@ -196,21 +208,19 @@ btnConfirmarMp.addEventListener("click", ()=>{
       })
       
       swalWithBootstrapButtons.fire({
-        title: 'Are you sure?',
-        text: "You won't be able to revert this!",
+        title: 'Finalizar Compra',
+        text: "Desea Finalizar la Compra?",
         icon: 'warning',
         showCancelButton: true,
-        confirmButtonText: 'Yes, delete it!',
-        cancelButtonText: 'No, cancel!',
+        confirmButtonText: 'Confirmar',
+        cancelButtonText: 'Cancelar',
         reverseButtons: false
       }).then((result) => {
         if (result.isConfirmed) {
           swalWithBootstrapButtons.fire(
-            'Deleted!',
-            'Your file has been deleted.',
-            'success'
+            'Su compra ha sido finalizada con Exito.',
           )
-          
+
           productosCarrito = []
           localStorage.removeItem("carrito")
             setTimeout(()=>{
@@ -218,13 +228,11 @@ btnConfirmarMp.addEventListener("click", ()=>{
             }, 3000)
 
         } else if (
-          /* Read more about handling dismissals below */
           result.dismiss === Swal.DismissReason.cancel
         ) {
           swalWithBootstrapButtons.fire(
-            'Cancelled',
-            'Your imaginary file is safe :)',
-            'error'
+            'Cancelado',
+            'Se ha cancelado el pago'
           )
         }
       })

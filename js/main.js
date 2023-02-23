@@ -188,6 +188,23 @@ function borrarCarrito(array){
             array.splice(index, 1)
             localStorage.setItem("carrito", JSON.stringify(array))
             calcularPrecio(array)
+
+            Toastify({
+                text: ` ${remeraEliminar.modelo} 
+                Se ha eliminado del carrito`,
+                duration: 3000,
+                destination: "https://github.com/apvarun/toastify-js",
+                newWindow: true,
+                close: true,
+                gravity: "bottom", 
+                position: "right", 
+                stopOnFocus: true, 
+                style: {
+                  background: "linear-gradient(90deg, rgba(213,114,15,1) 0%, rgba(149,0,28,1) 45%)",
+                },
+                onClick: function(){} 
+              }).showToast();
+              
         }else{
             localStorage.setItem("carrito", JSON.stringify(array))
         }
@@ -258,7 +275,6 @@ if(localStorage.getItem("carrito")){
 // EVENTOS
 
 buscador.addEventListener("input", ()=>{
-    console.log(buscador.value)
     buscarInfo(buscador.value, catalogoCompleto)
 
 })
@@ -271,6 +287,4 @@ btnCarritoComprar.addEventListener("click",()=>{
     window.location.href = "carrito.html"
 })
 
-btnProductos.addEventListener("click", ()=>{
-    window.location.reload(true)
-})
+
